@@ -84,16 +84,16 @@ This dashboard:
 ##  Project Status
 
 **Current Phase**
-- ✔ Apple Music API integration
-- ✔ Read-only analytics dashboard
-- ✔ Secure authentication flow
+-   Apple Music API integration
+-   Read-only analytics dashboard
+-   Secure authentication flow
 
 **Planned**
-- 🚧 Advanced analytics and Wrapped-style insights
+-   Advanced analytics and Wrapped-style insights
 
 ---
 
-## 🧑‍💻 Author
+##  Author
 
 **Tsebo Letele**  
 Computer Science Graduate & Software Developer  
@@ -101,7 +101,7 @@ Focused on C#, .NET, and full-stack development
 
 ---
 
-## ⚠️ Disclaimer
+##  Disclaimer
 
 This project is **not affiliated with Apple**.  
 All data is accessed via the official Apple Music API and used strictly for educational and portfolio purposes.
