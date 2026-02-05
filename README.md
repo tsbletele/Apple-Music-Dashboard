@@ -24,7 +24,7 @@ This project focuses on **secure API integration**, **data aggregation**, and a 
 - Average playlist size
 - Most common artists across playlists
 
-### 📊 Dashboard UI
+###  Dashboard UI
 - Card-based layout for quick insights
 - Charts and tables for analytics
 - Fully responsive interface
