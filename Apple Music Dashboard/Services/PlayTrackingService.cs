@@ -21,5 +21,4 @@ namespace Apple_Music_Dashboard.Services
             });
         }
     }
-
 }
