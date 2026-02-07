@@ -8,7 +8,7 @@ namespace Apple_Music_Dashboard.Data
 
         public static List<Artist> Artists = new();
         public static List<Song> Songs = new();
-        public static List<PlayEvent> PlayEvents = new();
+        public static List<PlayEvent> PlayEvents { get; } = new();
     }
 
 }
