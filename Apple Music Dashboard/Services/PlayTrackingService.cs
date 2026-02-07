@@ -5,20 +5,17 @@ namespace Apple_Music_Dashboard.Services
 {
     public class PlayTrackingService
     {
-        public void LogPlay(Guid songId)
+        public void TrackPlay(PlayEvent play)
         {
-            var song = InMemoryDataStore.Songs
-                .FirstOrDefault(s => s.Id == songId);
+            play.Id = InMemoryDataStore.PlayEvents.Count + 1;
+            play.PlayedAt = DateTime.UtcNow;
 
-            if (song == null) return;
+            InMemoryDataStore.PlayEvents.Add(play);
+        }
 
-            InMemoryDataStore.PlayEvents.Add(new PlayEvent
-            {
-                UserId = InMemoryDataStore.User.Id,
-                SongId = songId,
-                PlayedAt = DateTime.UtcNow,
-                DurationSeconds = song.DurationSeconds
-            });
+        public List<PlayEvent> GetAllPlays()
+        {
+            return InMemoryDataStore.PlayEvents;
         }
     }
 }
