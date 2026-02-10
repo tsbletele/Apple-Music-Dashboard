@@ -1,109 +1,75 @@
-#  Apple Music Dashboard
+#  Apple Music Dashboard (Wrapped-Style Analytics)
 
-A full-stack **C# Apple Music analytics dashboard** that visualizes a user’s Apple Music library, playlists, and listening behavior using the official Apple Music API.
-
-This project focuses on **secure API integration**, **data aggregation**, and a **clean dashboard UI**, with plans to extend into Spotify-style “Wrapped” analytics over time.
+A **C#/.NET-based music analytics dashboard** inspired by Apple Music Replay and Spotify Wrapped.  
+This project focuses on **tracking listening activity, generating fun summaries, and gamifying music habits** using a **custom-built API**, rather than Apple’s official API.
 
 ---
 
-##  Features
+##  Important Note: No Apple Music API Integration
 
-###  Listening Insights
-- Recently played tracks
-- Recently added songs and albums
-- Track metadata (artist, duration, release date)
+This project **does NOT use Apple’s official Music API**.
 
-###  Library Statistics
-- Total number of songs, albums, and artists
-- Genre distribution visualization
-- Oldest vs newest music in the library
+### Why?
+Apple does **not** provide access to:
+- User listening history
+- Play counts
+- Time listened
+- Real-time track plays
 
-###  Playlist Analytics
-- Total playlists
-- Largest playlist
-- Average playlist size
-- Most common artists across playlists
+Even with a paid Apple Developer account.
 
-###  Dashboard UI
-- Card-based layout for quick insights
-- Charts and tables for analytics
-- Fully responsive interface
+Instead, this project:
+- Builds a **custom analytics backend**
+- Tracks listening activity **inside the application**
+- Generates Wrapped-style insights from tracked data
+
+---
+
+##  Project Goals
+
+- Build a **Wrapped-style music analytics system**
+- Practice **real-world API design**
+- Implement **time-based aggregation** (weekly, monthly, yearly)
+- Add **gamification** to make music stats fun and engaging
+- Keep the system **API-first** and frontend-agnostic
+
+---
+
+##  Core Features
+
+###  Listening Tracking
+- Track individual song plays
+- Store metadata:
+  - Track name
+  - Artist
+  - Album
+  - Duration
+  - Timestamp
+
+###  Wrapped-Style Summaries
+- Weekly summaries
+- Monthly summaries
+- Yearly summaries
+- Top tracks, artists, and albums
+- Total listening time
+
+###  Gamification
+- Daily listening streaks
+- Longest streak tracking
+- Achievement-style milestones  
+  (e.g. 7-day streaks, 100 songs played)
 
 ---
 
 ##  Tech Stack
 
 ### Backend
+- **C#**
 - **ASP.NET Core Web API**
-- Apple Music REST API
-- JWT generation for Apple Music Developer Token
-- DTO-based response mapping
-- Secure handling of Apple credentials
+- **Swagger (Swashbuckle)** for API testing
+- In-memory data storage
 
-### Frontend
-- **Blazor WebAssembly**
-- End-to-end C#
-- Charting library for data visualization
-- REST communication with backend API
-
-### Authentication
-- Apple Music **Developer Token** (generated server-side)
-- Apple Music **User Token** (generated client-side via MusicKit)
-
----
-
-##  Architecture Overview
-
-- The frontend never communicates directly with Apple Music
-- All API secrets and logic are handled securely in the backend
-- The backend computes derived statistics before returning data to the UI
-
----
-
-##  Apple Music API Notes
-
-Apple Music does **not** provide full listening history or lifetime play counts.
-
-This dashboard:
-- Uses only officially supported Apple Music endpoints
-- Focuses on library-based and recent activity insights
-- Clearly distinguishes between API-provided data and derived analytics
-
----
-
-##  Planned Enhancements
-
-- Spotify-style “Wrapped” analytics
-- Listening streaks and milestones
-- Monthly and yearly summaries
-- Historical trend charts
-- Optional persistence layer (database integration)
-
----
-
-##  Project Status
-
-**Current Phase**
--   Apple Music API integration
--   Read-only analytics dashboard
--   Secure authentication flow
-
-**Planned**
--   Advanced analytics and Wrapped-style insights
-
----
-
-##  Author
-
-**Tsebo Letele**  
-Computer Science Graduate & Software Developer  
-Focused on C#, .NET, and full-stack development
-
----
-
-##  Disclaimer
-
-This project is **not affiliated with Apple**.  
-All data is accessed via the official Apple Music API and used strictly for educational and portfolio purposes.
-
+### Frontend (Planned)
+- Blazor / Razor Pages
+- Dashboard-style UI with charts and stats
 
