@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddScoped<PlayTrackingService>();
 builder.Services.AddScoped<WrappedService>();
+builder.Services.AddScoped<StreakService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
