@@ -13,7 +13,7 @@ public class StreakService
             .OrderByDescending(d => d)
             .ToList();
 
-        if (!playDates.Any())
+        if (!playDates.Any()) // No play events, return empty stats 
         {
             return new StreakStats();
         }
@@ -21,9 +21,9 @@ public class StreakService
         int currentStreak = 1;
         int longestStreak = 1;
 
-        for (int i = 1; i < playDates.Count; i++)
+        for (int i = 1; i < playDates.Count; i++) // Check if current date is exactly one day before the previous date
         {
-            if ((playDates[i - 1] - playDates[i]).Days == 1)
+            if ((playDates[i - 1] - playDates[i]).Days == 1) // If the current date is exactly one day before the previous date, we are in a streak
             {
                 currentStreak++;
                 longestStreak = Math.Max(longestStreak, currentStreak);
