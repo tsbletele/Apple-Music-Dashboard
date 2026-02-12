@@ -8,6 +8,7 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<PlayTrackingService>();
 builder.Services.AddScoped<WrappedService>();
 builder.Services.AddScoped<StreakService>();
+builder.Services.AddScoped<AnalyticsService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
