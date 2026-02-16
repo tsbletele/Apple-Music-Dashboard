@@ -1,6 +1,7 @@
 using Apple_Music_Dashboard.Data;
 using Apple_Music_Dashboard.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -14,6 +15,8 @@ builder.Services.AddScoped<PlayTrackingService>();
 builder.Services.AddScoped<WrappedService>();
 builder.Services.AddScoped<StreakService>();
 builder.Services.AddScoped<AnalyticsService>();
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite("Data Source=applemusic.db"));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
